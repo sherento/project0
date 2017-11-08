@@ -18,11 +18,8 @@ console.log("Tic Tac Toe");
       } else {
       player2($(this).data('array'), $(this).data('index'));
     }
+    console.log('clicked');
     });
-
-    // $('.square').on('click', function() {
-      // player2($(this).data('array'), $(this).data('index'));
-    // });
 
     const player1 = function( array, index ) {
       if ( playerTurn ) {
