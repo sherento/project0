@@ -1,10 +1,10 @@
 
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
 body {
   margin: 0;
   padding: 0;
   background-color: black;
-  max-width: 960px;
-  max-height: 960px;
 }
 
 .square {
@@ -13,6 +13,8 @@ body {
   height: auto;
   border: 5px solid black;
   display: inline-block;
+  vertical-align: top;
+  position: relative;
 }
 
 .grid {
@@ -20,24 +22,23 @@ body {
   text-align: center;
   margin: 100px auto;
   position: relative;
+  margin: 100px auto;
+  max-width: 960px;
 }
 
 .row1, .row2, .row3 {
   max-height: 160px;
 }
 
-img {
-  width: 90px;
-  height: 90px;
-}
-
 .board {
   display: flex;
   min-height: 100vh;
+  margin: 0 auto;
 }
 container {
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 #line1, #line2 {
@@ -92,4 +93,123 @@ margin-left: 480px;
   left: 230px;
   background: #acffff;
   box-shadow: 0 0 80px #0ff, 0 0 80px #0ff, 0 0 80px #0ff;
+}
+
+circle {
+  background: #bebeff;
+  box-shadow: 0 0 6px 2px #00f, 0 0 6px 2px #00f, 0 0 6px 2px #00f;
+  z-index: 5;
+  position: absolute;
+  cx: 50;
+  cy: 70;
+  r: 40;
+  stroke-width: 15;
+}
+
+.noughts {
+  transform: rotate(-90deg);
+}
+
+svg#round.noughts {
+  margin: 0;
+  padding: 0;
+  width= 100px;
+  height= 100px;
+}
+
+.O {
+  width: 100px;
+  height: 100px;
+}
+
+#round {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  fill: transparent;
+  stroke: #bebeff;
+  animation-name: seconds;
+	animation-duration: 1s;
+	animation-timing-function: steps(60);
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+  animation-fill-mode: forwards;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+}
+
+@keyframes seconds {
+  0% {
+    stroke-dashoffset: 502;
+    stroke: white;
+  }
+  50% {
+    stroke: #1abc9c;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #1abc9c;
+  }
+}
+
+.cross {
+  height: 9px;
+  width: 150px;
+  border-radius: 9px;
+  background-color: #ffadff;
+  box-shadow: 0 0 80px #f0f, 0 0 80px #f0f, 0 0 80px #f0f;
+  -webkit-animation-name: cross;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  z-index: 2;
+}
+
+.slash1, .slash2 {
+  position: absolute;
+}
+
+.slash1 {
+  top: 40px;
+  left: 40px;
+  width: 100px;
+  transform-origin: top left;
+  transform: rotate(45deg);
+}
+
+.slash2 {
+  top: 41px;
+  right: 42px;
+  width: 100px;
+  transform-origin: top right;
+  transform: rotate(-45deg);
+}
+
+@keyframes cross {
+  0%{
+    width: 1px;
+  }
+  100%{
+    width: 100px;
+  }
+}
+
+@keyframes cross {
+  0%{
+    width: 1px;
+  }
+  100%{
+    width: 100px;
+  }
+}
+
+p {
+  font-family: 'Amatic SC', cursive;
+  font-size: 50px;
+  color: white;
+  text-align: left;
+  bottom: 900px;
+  margin: -400px 0 0 100px;
 }
