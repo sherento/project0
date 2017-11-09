@@ -11,6 +11,7 @@ console.log("Tic Tac Toe");
   $(".X").hide();
   $(".O").hide();
 
+
   let playerTurn = true;
   let gameOver = false;
 

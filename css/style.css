@@ -57,6 +57,7 @@ container {
   left: 393px;
   background: #ffd0d0;
   box-shadow: 0 0 80px #f00, 0 0 80px #f00, 0 0 80px #f00;
+  transform-origin: top bottom;
 }
 
 #line2 {
@@ -64,6 +65,25 @@ container {
   left: 557px;
   background: #ffffd7;
   box-shadow: 0 0 80px #ff0, 0 0 80px #ff0, 0 0 80px #ff0;
+  transform-origin: bottom top;
+}
+
+@keyframes line1 {
+  0%{
+    width: 10px;
+  }
+  100%{
+    width: 500px;
+  }
+}
+
+@keyframes line2 {
+  0%{
+    width: 10px;
+  }
+  100%{
+    width: 500px;
+  }
 }
 
 ul {
@@ -130,7 +150,7 @@ svg#round.noughts {
   margin: auto;
   fill: transparent;
   stroke: #bebeff;
-  animation-name: seconds;
+  animation-name: round;
 	animation-duration: 1s;
 	animation-timing-function: steps(60);
 	animation-delay: 0s;
@@ -141,17 +161,17 @@ svg#round.noughts {
   stroke-dashoffset: 502;
 }
 
-@keyframes seconds {
+@keyframes round {
   0% {
     stroke-dashoffset: 502;
     stroke: white;
   }
   50% {
-    stroke: #1abc9c;
+    stroke: #00f;
   }
   100% {
     stroke-dashoffset: 0;
-    stroke: #1abc9c;
+    stroke: #00f;
   }
 }
 
