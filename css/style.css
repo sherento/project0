@@ -41,8 +41,22 @@ container {
   margin: 0 auto;
 }
 
+.vertical {
+  -webkit-animation-name: vertical;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in;
+}
+
+#line1.initial, #line2.initial {
+  height: 0;
+}
+
+#line3.initial, #line4.initial {
+  width: 0;
+}
+
+
 #line1, #line2 {
-  /*background-color: #fff;*/
   text-align: center;
   height: 500px;
   width: 10px;
@@ -58,6 +72,7 @@ container {
   background: #ffd0d0;
   box-shadow: 0 0 80px #f00, 0 0 80px #f00, 0 0 80px #f00;
   transform-origin: top bottom;
+  transition: all 3s;
 }
 
 #line2 {
@@ -66,6 +81,7 @@ container {
   background: #ffffd7;
   box-shadow: 0 0 80px #ff0, 0 0 80px #ff0, 0 0 80px #ff0;
   transform-origin: bottom top;
+  transition: all 3s;
 }
 
 @keyframes line1 {
@@ -90,8 +106,13 @@ ul {
 margin-left: 480px;
 }
 
+.horizontal {
+  -webkit-animation-name: horizontal;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in;
+}
+
 #line3, #line4 {
-  /*background-color: #fff;*/
   text-align: center;
   height: 10px;
   width: 500px;
@@ -106,6 +127,8 @@ margin-left: 480px;
   left: 230px;
   background: #bffbbf;
   box-shadow: 0 0 80px #0f0, 0 0 80px #0f0, 0 0 80px #0f0;
+  transform-origin: left right;
+  transition: all 3s;
 }
 
 #line4 {
@@ -113,6 +136,26 @@ margin-left: 480px;
   left: 230px;
   background: #acffff;
   box-shadow: 0 0 80px #0ff, 0 0 80px #0ff, 0 0 80px #0ff;
+  transform-origin: right left;
+  transition: all 3s;
+}
+
+@keyframes line1 {
+  0%{
+    width: 10px;
+  }
+  100%{
+    width: 500px;
+  }
+}
+
+@keyframes line2 {
+  0%{
+    width: 10px;
+  }
+  100%{
+    width: 500px;
+  }
 }
 
 circle {
@@ -133,8 +176,8 @@ circle {
 svg#round.noughts {
   margin: 0;
   padding: 0;
-  width= 100px;
-  height= 100px;
+  width= 140px;
+  height= 140px;
 }
 
 .O {
@@ -168,10 +211,12 @@ svg#round.noughts {
   }
   50% {
     stroke: #00f;
+
   }
   100% {
     stroke-dashoffset: 0;
     stroke: #00f;
+
   }
 }
 

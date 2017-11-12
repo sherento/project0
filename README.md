@@ -18,12 +18,11 @@
 
 
 ###Features to add
+-Animate grid lines
+-Reset button
+-Select player
+-Clean code
 
-
-
-
-
-###License
 
 
 
